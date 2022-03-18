@@ -5,7 +5,8 @@ public class Scoring {
         //Student jack = new Student("Jack");
         Student jack = new Student("Jack",80,38);
         Student evan = new Student("Evan",90,88);
-        GraduatedStudent jane = new GraduatedStudent("Jane");
+        GraduatedStudent jane =
+                new GraduatedStudent("Jane", 60, 70, 85);
         jack.print();
         evan.print();
         jane.print();
