@@ -1,4 +1,4 @@
-package com.wanda;
+package com.wanda.sales;
 
 public class SilverCustomer extends Customer{
     public SilverCustomer(String id,int amount) {

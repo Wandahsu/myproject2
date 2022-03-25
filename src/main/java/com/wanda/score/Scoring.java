@@ -1,4 +1,4 @@
-package com.wanda;
+package com.wanda.score;
 
 public class Scoring {
     public static void main(String[] args) {

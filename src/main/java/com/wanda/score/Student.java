@@ -1,4 +1,4 @@
-package com.wanda;
+package com.wanda.score;
 
 public class Student {
     String name;

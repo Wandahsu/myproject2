@@ -1,4 +1,4 @@
-package com.wanda;
+package com.wanda.sales;
 
 public class CustomerList {
     public static void main(String[] args) {

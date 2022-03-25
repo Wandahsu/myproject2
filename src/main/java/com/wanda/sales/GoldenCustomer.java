@@ -1,4 +1,4 @@
-package com.wanda;
+package com.wanda.sales;
 
 public class GoldenCustomer extends Customer{
     int giveBack;
