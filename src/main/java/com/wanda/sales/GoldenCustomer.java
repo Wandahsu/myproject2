@@ -1,15 +1,13 @@
 package com.wanda.sales;
 
-public class GoldenCustomer extends Customer{
-    int giveBack;
+public class GoldenCustomer extends SilverCustomer{
     public GoldenCustomer(String id,int amount) {
         super(id,amount);
 
     }
+    public int percentOff (){return (int) (amount - (amount * off));}
+
     @Override
-    public void print() {
+    public int giveBack() {return (amount-percentOff());}
 
-        System.out.println(id + "\t"+amount +"\t" +money() + "\t" + giveBack()+" give back");
-
-    }
 }

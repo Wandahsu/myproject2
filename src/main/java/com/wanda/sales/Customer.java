@@ -15,6 +15,7 @@ public class Customer {
     public int money () {
         return (int) (amount - (amount/1000)*off*1000);
     }
+    public int percentOff (){return (int) (amount - (amount * off));}
 
     public void print() {
         System.out.println(id + "\t" + amount + "\t" + money() );
