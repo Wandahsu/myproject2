@@ -3,6 +3,7 @@ package com.wanda.ticket;
 
 import java.util.Scanner;
 
+import static com.wanda.ticket.Total.choose1;
 import static com.wanda.ticket.Total.total;
 
 public class Book {
@@ -66,10 +67,15 @@ public class Book {
             if(keep ==1) {
                 total = (int)(Math.abs(endStation.price- startStation.price)*ticket*ticketType.percentOff);
                 System.out.println(total);
+                choose1 = (startStation.name + "\t" + endStation .name+ "\t" + ticketType.name+ "*" + ticket  + "\t"+total);
+
                 continue;
             }else if (keep ==2) {
                 int price = (int)(Math.abs(endStation.price- startStation.price)*ticket*ticketType.percentOff);
-                System.out.println(startStation.name + "\t" + endStation .name+ "\t" + ticketType.name+ "*" + ticket+ "\t"+ "Total = " +(price+total));
+                System.out.println(choose1);
+                System.out.println(startStation.name + "\t" + endStation .name+ "\t" + ticketType.name+ "*" + ticket + "\t"+price);
+
+                System.out.println("Total = " +(price+total));
                 break;
             }
         }
