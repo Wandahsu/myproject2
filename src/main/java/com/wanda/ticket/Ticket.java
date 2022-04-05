@@ -7,7 +7,19 @@ public class Ticket {
     public static final int TAICHUNG_city = 200;
     public static final int KAOHSIUNG_city = 300;
 
-    Station start;
-    Station destination;
+    String start;
+    String destination;
+    String ticketType;
+    int ticket;
 
+    public Ticket(String start, String destination, String ticketType, int ticket) {
+        this.start = start;
+        this.destination = destination;
+        this.ticketType = ticketType;
+        this.ticket = ticket;
+    }
+    public void print() {
+        //int average = (english + math) /2;
+        System.out.println(start + "\t" + destination + "\t" + ticketType + "\t" + ticket);
+    }
 }

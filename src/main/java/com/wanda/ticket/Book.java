@@ -1,6 +1,10 @@
 package com.wanda.ticket;
 
 
+import com.wanda.score.Student;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import static com.wanda.ticket.Total.choose1;
@@ -8,38 +12,39 @@ import static com.wanda.ticket.Total.total;
 
 public class Book {
     public static void main(String[] args) {
+        List<Ticket> tickets = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to tje system! (enter '1' to book the ticket)");
         int in = Integer.parseInt(scanner.next());
         while (in == 1) {
             System.out.println("Your start station (1 Taipei , 2 Taichung, 3 Kaohsiung )");
             int choice = Integer.parseInt(scanner.next());
-            Station startStation = null;
+            Station start = null;
             switch (choice) {
                 case 1:
-                    startStation = startStation.TAIPEI_CITY;
+                    start = start.TAIPEI_CITY;
                     break;
                 case 2 :
-                    startStation = startStation.TAICHUNG_CITY;
+                    start = start.TAICHUNG_CITY;
                     break;
                 case 3:
-                    startStation =startStation.KAOHSiUNG_CITY;
+                    start =start.KAOHSiUNG_CITY;
                     break;
 
             }
 
             System.out.println("Your destination station (1 Taipei , 2 Taichung, 3 Kaohsiung )");
             choice = Integer.parseInt(scanner.next());
-            Station endStation = null;
+            Station destination = null;
             switch (choice) {
                 case 1:
-                    endStation = endStation.TAIPEI_CITY;
+                    destination = destination.TAIPEI_CITY;
                     break;
                 case 2 :
-                    endStation = endStation.TAICHUNG_CITY;
+                    destination = destination.TAICHUNG_CITY;
                     break;
                 case 3:
-                    endStation = endStation.KAOHSiUNG_CITY;
+                    destination = destination.KAOHSiUNG_CITY;
                     break;
 
             }
@@ -65,15 +70,17 @@ public class Book {
             System.out.println("Do you want to keep booking?('1' : Yes . '2' : No)");
             int keep = Integer.parseInt(scanner.next());
             if(keep ==1) {
-                total = (int)(Math.abs(endStation.price- startStation.price)*ticket*ticketType.percentOff);
+                total = (int)(Math.abs(destination.price- start.price)*ticket*ticketType.percentOff);
                 System.out.println(total);
-                choose1 = (startStation.name + "\t" + endStation .name+ "\t" + ticketType.name+ "*" + ticket  + "\t"+total);
+                tickets.add(new Ticket(start.name,destination.name,ticketType.name,ticket));
 
                 continue;
             }else if (keep ==2) {
-                int price = (int)(Math.abs(endStation.price- startStation.price)*ticket*ticketType.percentOff);
-                System.out.println(choose1);
-                System.out.println(startStation.name + "\t" + endStation .name+ "\t" + ticketType.name+ "*" + ticket + "\t"+price);
+                int price = (int)(Math.abs(destination.price- start.price)*ticket*ticketType.percentOff);
+                tickets.add(new Ticket(start.name,destination.name,ticketType.name,ticket));
+                for (Ticket t:tickets) {
+                    t.print();
+                }
 
                 System.out.println("Total = " +(price+total));
                 break;
