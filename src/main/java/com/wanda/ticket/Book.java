@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import static com.wanda.ticket.Total.choose1;
 import static com.wanda.ticket.Total.total;
 
 public class Book {
@@ -49,7 +48,7 @@ public class Book {
 
             }
 
-            System.out.println("What type of ticket do you want? (1 Normal, 2 Student,3 Elder)");
+            System.out.println("What type of ticket do you want? (1 Normal, 2 Student, 3 Elder)");
             int type = Integer.parseInt(scanner.next());
             System.out.println("What many ticket do you want?");
             int ticket = Integer.parseInt(scanner.next());
@@ -73,16 +72,14 @@ public class Book {
                 total = (int)(Math.abs(destination.price- start.price)*ticket*ticketType.percentOff);
                 System.out.println(total);
                 tickets.add(new Ticket(start.name,destination.name,ticketType.name,ticket));
-
                 continue;
             }else if (keep ==2) {
-                int price = (int)(Math.abs(destination.price- start.price)*ticket*ticketType.percentOff);
+                total = total+(int)(Math.abs(destination.price- start.price)*ticket*ticketType.percentOff);
                 tickets.add(new Ticket(start.name,destination.name,ticketType.name,ticket));
                 for (Ticket t:tickets) {
                     t.print();
                 }
-
-                System.out.println("Total = " +(price+total));
+                System.out.println("Total = " + total);
                 break;
             }
         }
