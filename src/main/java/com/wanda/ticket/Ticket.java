@@ -13,13 +13,16 @@ public class Ticket {
     String ticketType;
     int ticket;
 
+
     public Ticket(String start, String destination, String ticketType, int ticket) {
         this.start = start;
         this.destination = destination;
         this.ticketType = ticketType;
         this.ticket = ticket;
+
     }
+
     public void print() {
-        System.out.println(start + "\t" + destination + "\t" + ticketType + "\t" + ticket);
+        System.out.println(start + "\t" + destination + "\t" + ticketType + "\t" + " * "+ticket);
     }
 }

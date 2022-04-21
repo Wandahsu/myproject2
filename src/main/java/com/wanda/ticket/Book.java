@@ -1,8 +1,6 @@
 package com.wanda.ticket;
 
 
-import com.wanda.score.Student;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -65,7 +63,6 @@ public class Book {
                     break;
 
             }
-
             System.out.println("Do you want to keep booking?('1' : Yes . '2' : No)");
             int keep = Integer.parseInt(scanner.next());
             if(keep ==1) {

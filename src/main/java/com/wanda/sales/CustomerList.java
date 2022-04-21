@@ -13,7 +13,16 @@ public class CustomerList {
         for (Customer c: customers) {
             c.print();
         }
-       /* for (int i = 0; i < 5; i++) {
+        Customer customer = customers.get(1);
+        if(customer instanceof GoldenCustomer) {
+            GoldenCustomer gc = (GoldenCustomer) customer;
+            System.out.println(gc.percentOff());
+        }
+
+        System.out.println(customer instanceof  GoldenCustomer);
+        SilverCustomer sc = (SilverCustomer)customer;
+        System.out.println(sc.giveBack());
+        /* for (int i = 0; i < 5; i++) {
             customers.get(i).print();
 
         }*/
