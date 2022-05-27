@@ -24,7 +24,7 @@ public class MainWindow {
         });
 //        MyActionListener listener = new MyActionListener();
 //        button.addActionListener(listener);
-        frame.setLayout(new FlowLayout());
+          frame.setLayout(new FlowLayout());
 //        frame.setLayout(new BorderLayout());
         frame.add(button);
 
